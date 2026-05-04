@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <img src="https://i.pinimg.com/736x/d9/d8/8e/d9d88e3d1f74e2b8ced3df051cecb81d.jpg" 
+                     alt="Logo" class="logo">
+                <h1>Login</h1>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="nationality">Nacionalidade</label>
+                    <select id="nationality" required>
+                        <option value="">Selecione seu país</option>
+                        <option value="BR">Brasil</option>
+                        <option value="PT">Portugal</option>
+                        <option value="AO">Angola</option>
+                        <option value="US">Estados Unidos</option>
+                        <option value="ES">Espanha</option>
+                        <option value="AR">Argentina</option>
+                        <option value="MX"> México</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+
+              <a href="paginainicial.html" class="botao1"> Entrar</a>
+            </form>
+
+            <div class="footer-links">
+                <a href="esquecisenha.html" class="forgot">Esqueceu a senha?</a>
+                <a href="cadastro.html" class="register">Não tem conta? Cadastre-se</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação: após login bem-sucedido
+            // Na vida real você verificaria no backend se o usuário tem 2FA ativado
+            const tem2FA = true;   // ← Mude para false se quiser testar sem 2FA
+
+            if (tem2FA) {
+                window.location.href = "verificação2tapas.html";
+            } else {
+                // Aqui entraria na página principal do sistema
+                alert("Login realizado com sucesso! (Sem 2FA)");
+                // window.location.href = "dashboard.html"; // sua página principal
+            }
+        });
+    </script>
+</body>
+</html>
